@@ -1,0 +1,13 @@
+# Foundry
+contracts/out/
+contracts/cache/
+contracts/broadcast/
+
+# Node
+node_modules/
+*.log
+
+# Local configuration
+.env
+!.env.example
+.DS_Store

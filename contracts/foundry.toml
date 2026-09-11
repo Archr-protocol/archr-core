@@ -1,0 +1,28 @@
+[profile.default]
+bytecode_hash = "ipfs"
+evm_version = "cancun"
+ffi = true
+fs_permissions = [{access = "read-write", path = ".forge-snapshots/"}]
+libs = ["lib"]
+optimizer = true
+optimizer_runs = 200
+out = "out"
+solc_version = "0.8.30"
+src = "src"
+via_ir = false
+# Foundry's default test gas limit is 2**30, which a 10,000-holder distribution
+# exceeds during setup alone. Robinhood Chain's real block
+# limit is 2**50, so this is not modelling anything the chain would refuse.
+gas_limit = 9000000000
+
+[invariant]
+runs = 64
+depth = 32
+fail_on_revert = false
+
+[rpc_endpoints]
+robinhood = "https://rpc.mainnet.chain.robinhood.com"
+
+[lint]
+exclude_lints = ["screaming-snake-case-immutable", "screaming-snake-case-const"]
+lint_on_build = false
